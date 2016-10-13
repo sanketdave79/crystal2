@@ -1,0 +1,18 @@
+<?php
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor
+ 
+
+function crystal2_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+
+  if ($node = \Drupal::Routemarch()->getParameter('node')) {
+    $content_type = $node->bundle();
+    $suggestions[] = 'page__'.$content_type;
+  }
+}
+
+*/
+

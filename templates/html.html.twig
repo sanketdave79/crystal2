@@ -1,0 +1,119 @@
+{#
+/**
+ * @file
+ * Default theme implementation for the basic structure of a single Drupal page.
+ *
+ * Variables:
+ * - logged_in: A flag indicating if user is logged in.
+ * - root_path: The root path of the current page (e.g., node, admin, user).
+ * - node_type: The content type for the current node, if the page is a node.
+ * - head_title: List of text elements that make up the head_title variable.
+ *   May contain or more of the following:
+ *   - title: The title of the page.
+ *   - name: The name of the site.
+ *   - slogan: The slogan of the site.
+ * - page_top: Initial rendered markup. This should be printed before 'page'.
+ * - page: The rendered page markup.
+ * - page_bottom: Closing rendered markup. This variable should be printed after
+ *   'page'.
+ * - db_offline: A flag indicating if the database is offline.
+ * - placeholder_token: The token for generating head, css, js and js-bottom
+ *   placeholders.
+ *
+ * @see template_preprocess_html()
+ *
+ * @ingroup themeable
+ */
+#}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+     <head-placeholder token="{{ placeholder_token|raw }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token|raw }}">
+    <js-placeholder token="{{ placeholder_token|raw }}">
+<script>
+    var themeHasJQuery = !!window.jQuery;
+</script>
+<script type="text/javascript" src="/assets/js/jquery.js?1.0.721"></script>
+<script>
+    window._$ = jQuery.noConflict(themeHasJQuery);
+</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/assets/css/bootstrap.css?1.0.721" media="screen" />
+<script type="text/javascript" src="/assets/js/bootstrap.min.js?1.0.721"></script>
+<!--[if lte IE 9]>
+<link rel="stylesheet" href="./assets/css/layout.ie.css?1.0.721">
+<script src="./assets/js/layout.ie.js?1.0.721"></script>
+<![endif]-->
+<link class="" href='http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic&subset=latin' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="/assets/js/layout.core.js"></script>
+<script src="/assets/js/CloudZoom.js?1.0.721"></script>
+	<link rel="stylesheet" href="/assets/css/style.css?1.0.721">
+	<script src="/assets/js/script.js?1.0.721"></script>
+    <meta charset="utf-8">
+    
+    
+    
+ <meta name="keywords" content="HTML, CSS, JavaScript">
+
+    
+ <style>a {
+  transition: color 250ms linear;
+}
+</style>
+   
+</head>
+  <body{{ attributes }}>
+    
+    <a href="#main-content" class="visually-hidden focusable">
+      {{ 'Skip to main content'|t }}
+    </a>
+    <header class=" bd-headerarea-1">
+        <section class=" bd-section-4 bd-page-width bd-tagstyles bd-aligncontent bd-aligncontent-5 " data-aligncontent-size="page" id="section3" data-section-title="Simple Header">
+    <div class="bd-section-inner">
+        <div class="bd-section-align-wrapper">
+            <a class=" bd-logo-2 bd-imagescaling bd-imagescaling-3" href="">
+    <img class=" bd-imagestyles-8" src="/assets/images/9600ea2848b10af1136185780e8c8df3_techmentationlogov2.png" alt="">
+</a>
+	
+		<div class=" bd-spacer-19 clearfix"></div>
+	
+		
+    
+    <nav class=" bd-hmenu-1 bd-page-width " data-responsive-menu="true" data-responsive-levels="">
+        
+            <div class=" bd-responsivemenu-11 collapse-button">
+    <div class="bd-container-inner">
+        <div class=" bd-menuitem-4">
+            <a  data-toggle="collapse"
+                data-target=".bd-hmenu-1 .collapse-button + .navbar-collapse"
+                href="#" onclick="return false;">
+                    <span>Menu</span>
+            </a>
+        </div>
+    </div>
+</div>
+            <div class="navbar-collapse collapse">
+            
+            <div class=" bd-horizontalmenu-1 clearfix">
+                <div class="bd-container-inner">
+                    {{ page.primary_menu }}
+                    
+                    
+                </div>
+            </div>
+            
+        
+            </div>
+    </nav>
+        </div>
+    </div>
+</section>
+</header>
+    {{ page }}
+    {{ page_bottom }}
+    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+        
+  </body>
+</html>

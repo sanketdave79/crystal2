@@ -1,0 +1,27 @@
+general:
+  version: 1.x
+  css:
+    theme:
+      assets/css/style.css: {}
+      assets/css/bootstrap.css: {}
+      assets/css/bootstrap.min.css: {}
+      assets/css/layout.ie.min.css: {}
+      assets/css/style.css: {}
+      assets/css/style.ie.min.css: {}
+      assets/css/style.min.css: {}
+  js:
+      assets/js/bootstrap.min.js: {}
+      assets/js/CloudZoom.js: {}
+      assets/js/jquery.js: {}
+      assets/js/layout.core.js: {}
+      assets/js/script.js: {}
+  dependencies:
+      - core/jquery
+      - core/drupal.ajax
+      - core/drupal
+      - core/drupalSettings
+      - core/jquery.once
+
+
+
+

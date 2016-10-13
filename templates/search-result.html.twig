@@ -1,0 +1,13 @@
+{# empty Twig template #}
+<h5>
+  <a class="links" href="{{ url }}">{{ title }}</a>
+</h5>
+{{ title_suffix }}
+<div class="heading-a">
+  {% if snippet %}
+    <p class="heading-a">{{ snippet }}</p>
+  {% endif %}
+  {% if info %}
+    <p class="headerLine">{{ info }}</p>
+  {% endif %}
+</div>
